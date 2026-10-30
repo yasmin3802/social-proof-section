@@ -12,6 +12,11 @@ My solution to the Social proof section challenge on [Frontend Mentor](https://w
 
 The goal of this challenge was to build a social proof section that matches the design as closely as possible and adapts to different screen sizes. On mobile, everything stacks in one centered column. On desktop, the text and ratings sit side by side, and the three testimonial cards sit in a row.
 
+## Links
+
+- Live site: https://yasmin3802.github.io/social-proof-section/
+- Repository: https://github.com/yasmin3802/social-proof-section
+
 ## Built with
 
 - Semantic HTML5
