@@ -1,0 +1,238 @@
+/* ==========================================================
+   Social proof section
+   Mobile-first. Desktop layout starts at 62.5rem (1000px).
+   ========================================================== */
+
+/* ---------- Design tokens (from style-guide.md) ---------- */
+:root {
+  --clr-violet: hsl(300, 43%, 22%);       /* Very Dark Magenta */
+  --clr-pink: hsl(333, 80%, 67%);         /* Soft Pink */
+  --clr-text: hsl(303, 10%, 53%);         /* Dark Grayish Magenta */
+  --clr-tint: hsl(300, 24%, 96%);         /* Light Grayish Magenta */
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff: "League Spartan", sans-serif;
+  --fs-body: 0.9375rem;                   /* 15px */
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p,
+ul,
+figure,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--ff);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--clr-text);
+  background-color: var(--clr-white);
+  background-image:
+    url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+}
+
+.social-proof {
+  width: min(100% - 3rem, 69.375rem);     /* 24px side gutters, 1110px max */
+  margin-inline: auto;
+  padding-block: 5rem 6rem;
+}
+
+/* ---------- Intro ---------- */
+.intro {
+  display: grid;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.intro__title {
+  max-width: 11em;
+  margin: 0 auto 1.25rem;
+  font-size: 2rem;                        /* 32px */
+  font-weight: 700;
+  line-height: 1;
+  color: var(--clr-violet);
+}
+
+.intro__copy {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Ratings ---------- */
+.ratings {
+  display: grid;
+  gap: 1rem;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--clr-tint);
+  border-radius: 0.5rem;
+}
+
+.rating__stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rating__stars img {
+  width: 1.0625rem;
+  height: auto;
+}
+
+.rating__label {
+  font-weight: 700;
+  color: var(--clr-violet);
+}
+
+/* ---------- Testimonials ---------- */
+.testimonials {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.testimonial {
+  padding: 2rem;
+  color: var(--clr-white);
+  background-color: var(--clr-violet);
+  border-radius: 0.5rem;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.testimonial__name {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.testimonial__status {
+  line-height: 1.3;
+  color: var(--clr-pink);
+}
+
+.testimonial__quote {
+  line-height: 1.5;
+}
+
+/* ---------- Footer / attribution ---------- */
+.attribution {
+  padding: 1rem 1.5rem 1.5rem;
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ==========================================================
+   Desktop
+   ========================================================== */
+@media (min-width: 62.5rem) {
+  body {
+    background-image:
+      url("./images/bg-pattern-top-desktop.svg"),
+      url("./images/bg-pattern-bottom-desktop.svg");
+  }
+
+  .social-proof {
+    padding-block: 6.5rem 6rem;
+  }
+
+  /* Heading + text on the left, ratings on the right */
+  .intro {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .intro__title {
+    max-width: 7em;
+    margin: 0 0 1.5rem;
+    font-size: 3rem;                      /* 48px */
+  }
+
+  .intro__copy {
+    max-width: 26em;
+    font-size: 1.125rem;
+  }
+
+  /* Ratings: stacked, each pushed 48px further right */
+  .ratings {
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  .rating {
+    flex-direction: row;
+    gap: 2rem;
+    width: 27.8125rem;                    /* 445px */
+    padding: 1rem 2rem;
+  }
+
+  .rating:nth-child(2) {
+    margin-left: 3rem;
+  }
+
+  .rating:nth-child(3) {
+    margin-left: 6rem;
+  }
+
+  /* Testimonials: 3 columns, each card 16px lower than the last */
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875rem;
+    margin-top: 4.5rem;
+    padding-bottom: 2rem;                 /* room for the offset cards */
+  }
+
+  .testimonial:nth-child(2) {
+    transform: translateY(1rem);
+  }
+
+  .testimonial:nth-child(3) {
+    transform: translateY(2rem);
+  }
+}
